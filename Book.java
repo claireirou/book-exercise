@@ -6,6 +6,7 @@
  * @author Claire Iroudayassamy
  * @version Feb 4, 2019
  */
+
 class Book
 {
      // The fields.
@@ -13,6 +14,7 @@ class Book
     private String title;
     private int pages;
     private String refNumber;
+    private int borrowed;
 
     /**
      * Set the author and title fields when this object
@@ -24,6 +26,7 @@ class Book
         title = bookTitle;
         pages = numPages;
         refNumber = ("");
+        borrowed = 0;
     }
 
     // Add the methods here ...
@@ -64,19 +67,36 @@ class Book
     }
     
     /**
+     * Provide access to the int number of times book was borrowed
+     * @return borrowed
+     */
+    public int getBorrowed()
+    {
+       return borrowed; 
+    }
+    
+    /**
      * mutator for refNumber
      */
     public void setRefNumber(String ref)
     {
         if(ref.length() < 3)
         {
-      System.out.println("Error! Reference number must be at least three characters.");
-    }else
-    {
-        refNumber = ref;
-    }
+         System.out.println("Error! Reference number must be at least three characters.");
+        }else
+        {
+         refNumber = ref;
+        }
 }
     
+    /**
+     * mutator for number of times book was borrowed
+     */
+    public void borrow()
+    {
+       borrowed++;
+    }
+
     /**
      * Print author to the terminal window
      */
@@ -99,6 +119,7 @@ class Book
     public void printDetails()
     {
        System.out.println("Title: "+title+"\nAuthor: "+author+"\nPages: "+pages);
+       
        if(refNumber == (""))
        {
            System.out.println("Reference Number: ZZZ"); 
@@ -106,5 +127,7 @@ class Book
         {
            System.out.println("Reference Number: "+refNumber);
         }
+        
+        System.out.println(title+" has been borrowed "+borrowed+" time(s)");
     }
 }
