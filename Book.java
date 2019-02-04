@@ -88,10 +88,17 @@ class Book
     }
     
     /**
-     * Print author, title, and pages to the terminal window
+     * Print author, title, pages and reference number to the terminal window
      */
     public void printDetails()
     {
-       System.out.println("Title: "+title+"\nAuthor: "+author+"\nPages: "+pages); 
+       System.out.println("Title: "+title+"\nAuthor: "+author+"\nPages: "+pages);
+       if(refNumber == (""))
+       {
+           System.out.println("Reference Number: ZZZ"); 
+        }else
+        {
+           System.out.println("Reference Number: "+refNumber);
+        }
     }
 }
