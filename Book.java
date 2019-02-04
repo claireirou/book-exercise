@@ -12,6 +12,7 @@ class Book
     private String author;
     private String title;
     private int pages;
+    private String refNumber;
 
     /**
      * Set the author and title fields when this object
@@ -22,6 +23,7 @@ class Book
         author = bookAuthor;
         title = bookTitle;
         pages = numPages;
+        refNumber = ("");
     }
 
     // Add the methods here ...
@@ -50,6 +52,23 @@ class Book
     public int getPages()
     {
         return pages;
+    }
+    
+    /**
+     * Provide access to the string holding the reference number
+     * @return refNumber
+     */
+    public String getRefNumber()
+    {
+       return refNumber; 
+    }
+    
+    /**
+     * mutator for refNumber
+     */
+    public void setRefNumber(String ref)
+    {
+        refNumber = ref;
     }
     
     /**
